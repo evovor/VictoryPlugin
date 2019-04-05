@@ -1,33 +1,19 @@
 // Some copyright should be here...
 
 using UnrealBuildTool;
+using System.IO;
 
 public class VictoryBPLibrary : ModuleRules
 {
 	public VictoryBPLibrary(ReadOnlyTargetRules Target) : base(Target)
-	{ 
-		PrivatePCHHeaderFile = "Private/VictoryBPLibraryPrivatePCH.h";
+	{
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		//4.15 Include What You Use
-		bEnforceIWYU = false;
-		
-		PublicIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Public"
-				
-				// ... add public include paths required here ...
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Private",
-				
-				// ... add other private include paths required here ...
-			}
-			);
-			
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
+        PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
+
+        //4.15 Include What You Use
+        bEnforceIWYU = false;
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
