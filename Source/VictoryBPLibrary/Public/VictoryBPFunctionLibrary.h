@@ -247,7 +247,7 @@ class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunction
 	* @param Rotation - Worldspace rotation for rotating the entire level
 	* @return false if the level name was not found
 	*/
-	UFUNCTION(BlueprintCallable, Category = "Victory BP Library|Dynamic Level Generation",meta=(DeprecatedFunction, DeprecationMessage="My LoadLevelInstance BP node is in the main UE4 Engine as of 4.13! This version is deprecated and will be removed in the near future. <3 -Rama",WorldContext="WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Victory BP Library|Dynamic Level Generation",meta=(UE_DEPRECATEDFunction, DeprecationMessage="My LoadLevelInstance BP node is in the main UE4 Engine as of 4.13! This version is UE_DEPRECATED and will be removed in the near future. <3 -Rama",WorldContext="WorldContextObject"))
 	static ULevelStreaming* VictoryLoadLevelInstance(UObject* WorldContextObject, FString MapFolderOffOfContent, FString LevelName, int32 InstanceNumber, FVector Location, FRotator Rotation,bool& Success);
 
 	//~~~~~~~~~~
@@ -826,7 +826,7 @@ class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunction
 	static FVector2D ProjectWorldToScreenPosition(const FVector& WorldLocation);
 
 	/** Make sure to save off the return value as a global variable in one of your BPs or else it will get garbage collected! */
-	UFUNCTION(BlueprintCallable, Category = "Victory BP Library|Misc", meta = (DeprecatedFunction, DeprecationMessage="Epic has introduced Construct Object as of 4.9.0, I recommend you use that instead! -Rama", HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Victory BP Library|Misc", meta = (UE_DEPRECATEDFunction, DeprecationMessage="Epic has introduced Construct Object as of 4.9.0, I recommend you use that instead! -Rama", HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
 	static UObject* CreateObject(UObject* WorldContextObject, UClass* TheObjectClass);
 
 	/** Make sure to save off the return value as a global variable in one of your BPs or else it will get garbage collected! */
